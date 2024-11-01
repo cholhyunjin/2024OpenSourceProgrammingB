@@ -20,10 +20,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	counts := 0
+	//counts := 0
+	var isPrime bool = true // int -> bool, counnts -> isPrime
 
 	if n <= 1 {
-		counts = -1
+		//counts = -1
+		isPrime = false
 	}
 	i := 2
 	for i < n {
