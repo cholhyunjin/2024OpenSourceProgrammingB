@@ -20,21 +20,21 @@ func main() {
 		log.Fatal(err)
 	}
 
-	//counts := 0
-	var isPrime bool = true // int -> bool, counnts -> isPrime
-
+	var isPrime bool = true
 	if n <= 1 {
-		//counts = -1
 		isPrime = false
-	}
-	i := 2
-	for i < n {
-		if n%i == 0 {
-			counts = counts + 1
+	} else {
+		i := 2
+		for i < n {
+			if n%i == 0 {
+				isPrime = false
+				break
+			}
+			fmt.Printf("%d", i) // 반복 횟수 확인용 코드
+			i++
 		}
-		i++
 	}
-	if counts == 2 {
+	if isPrime {
 		fmt.Printf("%d는 소수입니다.", n)
 	} else {
 		fmt.Printf("%d는 소수가 아닙니다.", n)
