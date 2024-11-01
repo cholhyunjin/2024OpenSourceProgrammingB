@@ -4,16 +4,17 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
+	//fmt.Printf("%f\n", math.Sqrt(25.0))
 	fmt.Print("정수 입력 : ")
 	i := bufio.NewReader(os.Stdin)
 	number, err := i.ReadString('\n')
-
 	number = (strings.TrimSpace(number))
 	n, err := strconv.Atoi(number)
 	if err != nil {
@@ -25,10 +26,11 @@ func main() {
 		isPrime = false
 	} else {
 		i := 2
-		for i < n {
+		//for i < n {
+		fot i < math.Sqrt(float64(n)) {
 			if n%i == 0 {
 				isPrime = false
-				break
+				break // 1과 자기자신을 제외한 첫 번째 약수가 발견 되면 반복문 종료
 			}
 			fmt.Printf("%d", i) // 반복 횟수 확인용 코드
 			i++
