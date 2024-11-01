@@ -21,7 +21,7 @@ func main() {
 	realscore, _ := strconv.ParseInt(score, 10, 32) // 정수형 32비트 타입으로 형변환
 
 	var grade string
-	if realscore >= 60 {
+	if realscore >= 90 {
 		grade = ("A")
 	} else {
 		grade = ("BCDF")

@@ -13,8 +13,8 @@ func main() {
 	fmt.Printf("%T\n", 2.1)
 
 	i := 1
-	for i <= 100 {
-		fmt.Printf("%2d점\n", i)
+	for i <= 100 { // while
+		fmt.Printf("%3d점\n", i)
 		i = i + 1
 	}
 }
