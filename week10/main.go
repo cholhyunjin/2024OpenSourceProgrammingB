@@ -21,8 +21,12 @@ func main() {
 	}
 
 	counts := 0
-	i := 1
-	for i <= n {
+
+	if n <= 1 {
+		counts = -1
+	}
+	i := 2
+	for i < n {
 		if n%i == 0 {
 			counts = counts + 1
 		}
