@@ -7,8 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"week11/keyboard"
 )
+
 // input
 // 10
 // 19
@@ -17,49 +17,49 @@ import (
 // 11 13 17 19
 
 func isPrime(n int) bool {
-	if n < 2 {
+	if n <= 1 {
 		return false
 	} else if n == 2 {
 		return true
 	} else if n%2 == 0 {
 		return false
 	} else {
-		for j := 3; j*j <= n; j = j + 2 {
-			if n%j == 0 {
+		i := 3
+		for i*i <= n {
+			if n%i == 0 {
 				return false
 			}
-			//fmt.Printf("%d ", j)
+			//fmt.Printf("%d ", i)
+			i = i + 2
 		}
 	}
 	return true
 }
 
-func getInteger() (int, error) {
-	r := bufio.NewReader(os.Stdin)
-	a, err := r.ReadString('\n')
+func getInteger() int {
+	in := bufio.NewReader(os.Stdin)
+	a, err := in.ReadString('\n')
 	if err != nil {
-		return 0, err
+		log.Fatal(err)
 	}
+
 	a = strings.TrimSpace(a)
-	n, err := strconv.Atoi(a)
+	number, err := strconv.Atoi(a)
 	if err != nil {
-		return 0, err
+		log.Fatal(err)
 	}
-	return n, nil
+	return number
 }
 
 func main() {
 	fmt.Print("첫 번째 정수(시작 값) 입력 : ")
-	n1, err := getInteger()
-	n1, err := keyboard.GetInteger()
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	n1 := getInteger()
 	fmt.Print("두 번째 정수(끝 값) 입력 : ")
-	n2, err := getInteger()
-	n2, err := keyboard.GetInteger()
-	if err != nil {
-		log.Fatal(err)
+	n2 := getInteger()
+
+	for i := n1; i <= n2; i++ {
+		if isPrime(i) {
+			fmt.Printf("%d ", i)
+		}
 	}
 }
