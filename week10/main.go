@@ -10,19 +10,16 @@ import (
 )
 
 func isPrime(n int) bool {
-	//var isPrime bool = true
 	if n <= 1 {
 		return false
 	} else if n == 2 {
 		return true
-	} else if n%2 == 0 { // 2를 제외한 모든 짝수는 소수가 아님
+	} else if n%2 == 0 {
 		return false
-	} else { // 3이상의 홀수
+	} else { 
 		i := 3
 		for i*i <= n {
 			if n%i == 0 {
-				//isPrime = false
-				//break
 				return false
 			}
 			fmt.Printf("%d", i) 
