@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"week11/greeting"
 	"week11/keyboard"
 )
 
@@ -19,7 +20,6 @@ func isPrime(n int) bool {
 			if n%i == 0 {
 				return false
 			}
-			//fmt.Printf("%d ", i)
 			i = i + 2
 		}
 	}
@@ -27,6 +27,9 @@ func isPrime(n int) bool {
 }
 
 func main() {
+	// greeting.Hello("Inha")
+	// greeting.Hi("Harvard")
+	greeting.EnglishGreetings("Inha", "Harvard")
 	fmt.Print("첫 번째 정수(시작 값) 입력 : ")
 	n1, err := keyboard.GetInteger()
 	if err != nil {
